@@ -2,7 +2,6 @@
 import Head from 'next/head';
 import styles from './page.module.css';
 import ModalSummary from './(components)/Summary/page.js';
-import Slider from './(components)/Slider/page.js';
 
 export default function Home() {
   const imgSlides = [
@@ -233,7 +232,7 @@ export default function Home() {
             </ul>
           </div>
         </section>
-
+        {/* 
         <section className="work-section">
           <div className="container">
             <h2 className="work-section__title section-title">
@@ -241,7 +240,7 @@ export default function Home() {
             </h2>
             <Slider slides={imgSlides} />
           </div>
-        </section>
+        </section> */}
 
         <section className="customers-section">
           <div className="container">
