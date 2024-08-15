@@ -1,14 +1,13 @@
 import { Inter } from 'next/font/google';
-import './globals.css';
+import Header from '../(components)/Header/page';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
-
 export const metadata = {
-  title: "Дизайнер інтер'єрів",
-  description: "Головна сторінка дизайнера інтер'єрів",
+  title: 'Сертифікат',
+  description: "Сертифікат дизайнера інрер'єрів ",
 };
 
-export default function RootLayout({ children }) {
+export default function SertificateLayout({ children }) {
   return (
     <html lang="ua">
       <body className={inter.className}>{children}</body>

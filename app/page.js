@@ -1,17 +1,12 @@
-import Head from 'next/head';
 import styles from './page.module.css';
 import ModalSummary from './(components)/Summary/page.js';
+import Header from './(components)/Header/page';
+import Footer from './(components)/Footer/page';
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Дизайнер інтер'єрів</title>
-        <meta
-          name="description"
-          content="Головна сторінка дизайнера інрер'єрів "
-        />
-      </Head>
+      <Header />
       <main className={styles.main}>
         <section className="hiro-section">
           <div className="container inline-block">
@@ -274,6 +269,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

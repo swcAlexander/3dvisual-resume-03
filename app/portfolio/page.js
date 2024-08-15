@@ -1,6 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Head from 'next/head';
+import Header from '../(components)/Header/page';
+import Footer from '../(components)/Footer/page';
 
 const images = [
   { src: 'portfolio/bath/1.jpg', category: 'Вбиральні', description: 'ва' },
@@ -136,13 +138,7 @@ export default function Portfolio() {
 
   return (
     <>
-      <Head>
-        <title>Портфоліо</title>
-        <meta
-          name="description"
-          content="Портфоліо наших проектів та досягнень"
-        />
-      </Head>
+      <Header />
       <main>
         <section className="portfolio">
           <div className="container">
@@ -188,6 +184,7 @@ export default function Portfolio() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
