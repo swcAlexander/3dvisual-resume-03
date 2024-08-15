@@ -1,8 +1,8 @@
 'use client';
 import Head from 'next/head';
 import styles from './page.module.css';
-import ModalSummary from './(components)/Summary/page';
-import Slider from './(components)/Slider/page';
+import ModalSummary from './(components)/Summary/page.js';
+import Slider from './(components)/Slider/page.js';
 
 export default function Home() {
   const imgSlides = [
@@ -276,7 +276,7 @@ export default function Home() {
                   href="https://www.vfkkim.com.ua/"
                   className="customers-section__link">
                   <img
-                    src="https://lh6.googleusercontent.com/E6cKSF7W051P6yFRUOOfyGj8vVPxRZegOUuhtrnz3R6PunzNTiq8slRl6qNvAGShFvmlkr0YKyv8AJpZNPgg_r0=w16383"
+                    src="./logo2.webp"
                     className="imglogo"
                     alt="Логотип"></img>
                 </a>
