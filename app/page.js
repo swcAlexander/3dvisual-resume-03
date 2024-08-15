@@ -1,36 +1,8 @@
-'use client';
 import Head from 'next/head';
 import styles from './page.module.css';
 import ModalSummary from './(components)/Summary/page.js';
 
 export default function Home() {
-  const imgSlides = [
-    {
-      id: 1,
-      content: (
-        <img src="1.jpg" alt="" width="670" sizes="(min-width: 1200px) 33vw" />
-      ),
-    },
-    {
-      id: 2,
-      content: (
-        <img src="2.jpg" alt="" width="670" sizes="(min-width: 1200px) 33vw" />
-      ),
-    },
-    {
-      id: 3,
-      content: (
-        <img src="3.jpg" alt="" width="670" sizes="(min-width: 1200px) 33vw" />
-      ),
-    },
-    {
-      id: 4,
-      content: (
-        <img src="4.jpg" alt="" width="670" sizes="(min-width: 1200px) 33vw" />
-      ),
-    },
-  ];
-
   return (
     <>
       <Head>
