@@ -1,134 +1,129 @@
-'use client';
+"use client";
 
 import { usePathname } from 'next/navigation';
-import classNames from 'classnames';
+import { useState } from 'react'; 
+import styles from './page.module.scss';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const pathname = usePathname();
 
   const isActive = (href) => pathname === href;
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); 
+  };
+
   return (
-    <header className="site-header">
-      <div className="container flex">
-        <nav className="nav flex">
-          <a href="/" className="logo centred flex">
-            <span className="logo__first">Visual</span>
-            <span className="logo__second">Master</span>
+    <header className={styles.site_header}>
+      <div className={`${styles.container} ${styles.flex}`}>
+        <nav className={`${styles.flex} ${styles.nav}`}>
+          <a href="/" className={`${styles.logo} ${styles.centred} ${styles.flex}`}>
+            <span className={styles.logo__first}>Visual</span>
+            <span className={styles.logo__second}>Master</span>
           </a>
-          <ul className={classNames('nav__list', 'list', 'flex')}>
-            <li className={classNames('nav__item')}>
+          <ul className={`${styles.nav_list} ${styles.list} ${styles.flex}`}>
+            <li className={styles.nav_item}>
               <a
                 href="/"
-                className={classNames('nav__link', 'list', {
-                  ['current']: isActive('/'),
-                })}>
+                className={`${styles.nav__link} ${styles.list} ${isActive('/') ? styles.current : ''}`}
+              >
                 Моє резюме
               </a>
             </li>
-            <li className={classNames('nav__item')}>
+            <li className={styles.nav_item}>
               <a
                 href="/portfolio"
-                className={classNames('nav__link', 'list', {
-                  ['current']: isActive('/portfolio'),
-                })}>
+                className={`${styles.nav__link} ${styles.list} ${isActive('/portfolio') ? styles.current : ''}`}
+              >
                 Портфоліо
               </a>
             </li>
-            <li className={classNames('nav__item')}>
+            <li className={styles.nav_item}>
               <a
-                href="sertificate"
-                className={classNames('nav__link', 'list', {
-                  ['current']: isActive('/contacts'),
-                })}>
+                href="/sertificate"
+                className={`${styles.nav__link} ${styles.list} ${isActive('/sertificate') ? styles.current : ''}`}
+              >
                 Сертифікат
               </a>
             </li>
           </ul>
         </nav>
-        <ul className="contacts list">
-          <li className="contacts__item">
-            <a href="mailto:info@devstudio.com" className="contacts__link list">
-              <svg className="contacts__mail">
-                <use
-                  href="./images/icons.svg#icon-mail"
-                  width="16"
-                  height="12"></use>
+        <ul className={`${styles.contacts} ${styles.list}`}>
+          <li className={styles.contacts_item}>
+            <a href="mailto:info@devstudio.com" className={`${styles.contacts__link} ${styles.list}`}>
+              <svg className={styles.contacts__mail}>
+                <use href="./images/icons.svg#icon-mail" width="16" height="12"></use>
               </svg>
               <span>natalia_klymuk@gmail.com</span>
             </a>
           </li>
-          <li className="contacts__item">
-            <a href="tel:+380676841366" className="contacts__link list">
-              <svg className="contacts__smartphone">
-                <use
-                  href="./images/icons.svg#icon-smartphone"
-                  width="10"
-                  height="16"></use>
+          <li className={styles.contacts_item}>
+            <a href="tel:+380676841366" className={`${styles.contacts__link} ${styles.list}`}>
+              <svg className={styles.contacts__smartphone}>
+                <use href="./images/icons.svg#icon-smartphone" width="10" height="16"></use>
               </svg>
               <span>+380676841366</span>
             </a>
           </li>
         </ul>
         <button
-          className="menu-toggle js-open-menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu">
-          <svg
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg">
+          className={`${styles.menu_toggle} ${styles.js_open_menu}`}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile_menu"
+          onClick={toggleMenu}
+        >
+          <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path
               fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"></path>
+              clipRule="evenodd"
+            ></path>
           </svg>
         </button>
       </div>
-      <div className="menu-container js-menu-container" id="mobile-menu">
-        <button className="menu-toggle js-close-menu">
-          <svg
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24">
+      <div
+        id="mobile_menu"
+        className={`${styles.menu_container} ${isMenuOpen ? styles.is_open : ''}`}
+      >
+        <button className={`${styles.menu_toggle} ${styles.js_close_menu}`} onClick={toggleMenu}>
+          <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <path
               fillRule="evenodd"
               d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414z"
-              clipRule="evenodd"></path>
+              clipRule="evenodd"
+            ></path>
           </svg>
         </button>
 
-        <ul className="mobile-menu">
+        <ul className={styles.mobile_menu}>
           <li>
-            <a href="/" className="link">
+            <a href="/" className={styles.link}>
               Студія
             </a>
           </li>
           <li>
-            <a href="/portfolio" className="link">
+            <a href="/portfolio" className={styles.link}>
               Портфоліо
             </a>
           </li>
           <li>
-            <a href="/sertificate" className="link">
+            <a href="/sertificate" className={styles.link}>
               Сертифікат
             </a>
           </li>
         </ul>
-        <ul className="mobile-menu down list">
-          <li className="mobile-menu__item">
-            <a href="tel:+380676841366" className="mobile-menu__link list">
+        <ul className={`${styles.mobile_menu} ${styles.down} ${styles.list}`}>
+          <li className={styles.mobile_menu__item}>
+            <a href="tel:+380676841366" className={`${styles.mobile_menu__link} ${styles.list}`}>
               <span>+38 0676841366</span>
             </a>
           </li>
-          <li className="mobile-menu__item">
+          <li className={styles.mobile_menu__item}>
             <a
               href="mailto:natalia_klymuk@gmail.com"
-              className="mobile-menu__link list">
+              className={`${styles.mobile_menu__link} ${styles.list}`}
+            >
               <span>natalia_klymuk@gmail.com</span>
             </a>
           </li>
