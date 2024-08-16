@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Head from 'next/head';
 import Header from '../(components)/Header/page';
 import Footer from '../(components)/Footer/page';
+import ModalImage from '../(components)/ModalImage/page';
 
 const images = [
   { src: 'portfolio/bath/1.jpg', category: 'Вбиральні', description: 'ва' },
@@ -130,12 +130,23 @@ const images = [
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState('Усі');
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredImages =
     activeCategory === 'Усі'
       ? images
       : images.filter((image) => image.category === activeCategory);
 
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
   return (
     <>
       <Header />
@@ -163,21 +174,21 @@ export default function Portfolio() {
             <ul className="portfolio__list list">
               {filteredImages.map((image, index) => (
                 <li key={index} className="portfolio__item">
-                  <a href="/" className="portfolio__link list">
-                    <div className="container-images">
-                      <img
-                        src={image.src}
-                        loading="lazy"
-                        alt=""
-                        width="370"
-                        className="container-images__image"
-                        sizes="(min-width: 1600px) 15vw, (min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
-                      />
-                      <div className="overlay">
-                        <p className="overlay__text">Опис відсутній</p>
-                      </div>
+                  <div
+                    className="container-images"
+                    onClick={() => openModal(image)}>
+                    <img
+                      src={image.src}
+                      loading="lazy"
+                      alt=""
+                      width="370"
+                      className="container-images__image"
+                      sizes="(min-width: 1600px) 15vw, (min-width: 1200px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    />
+                    <div className="overlay">
+                      <p className="overlay__text">Опис відсутній</p>
                     </div>
-                  </a>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -185,6 +196,11 @@ export default function Portfolio() {
         </section>
       </main>
       <Footer />
+      <ModalImage
+        image={selectedImage}
+        isModalOpen={isModalOpen}
+        closeModal={closeModal}
+      />
     </>
   );
 }
