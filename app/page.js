@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import ModalSummary from './(components)/Summary/page.js';
 import Header from './(components)/Header/page';
 import Footer from './(components)/Footer/page';
+import Slider from './(components)/Slider/Slider';
 
 export default function Home() {
   return (
@@ -199,15 +200,15 @@ export default function Home() {
             </ul>
           </div>
         </section>
-        {/* 
+        
         <section className="work-section">
           <div className="container">
             <h2 className="work-section__title section-title">
               Приклади моїх робіт
             </h2>
-            <Slider slides={imgSlides} />
+            <Slider/>
           </div>
-        </section> */}
+        </section>
 
         <section className="customers-section">
           <div className="container">
