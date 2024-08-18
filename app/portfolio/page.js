@@ -9,7 +9,6 @@ const images = [
   { src: 'portfolio/bath/4.jpg', category: 'Вбиральні', description: 'ва' },
   { src: 'portfolio/bath/5.jpg', category: 'Вбиральні', description: 'ва' },
   { src: 'portfolio/bedroom/1.jpg', category: 'Спальні', description: 'ва' },
-  { src: 'portfolio/bedroom/1-2.jpg', category: 'Спальні', description: 'ва' },
   { src: 'portfolio/bedroom/1-6.jpg', category: 'Спальні', description: 'ва' },
   { src: 'portfolio/bedroom/1-7.jpg', category: 'Спальні', description: 'ва' },
   { src: 'portfolio/bedroom/1-8.jpg', category: 'Спальні', description: 'ва' },
@@ -57,8 +56,6 @@ const images = [
   { src: 'portfolio/exam/002.jpg', category: 'Вітальні', description: 'ва' },
   { src: 'portfolio/exam/006.jpg', category: 'Вітальні', description: 'ва' },
   { src: 'portfolio/exam/007.jpg', category: 'Вітальні', description: 'ва' },
-  { src: 'portfolio/exam/1-3.jpg', category: 'Вітальні', description: 'ва' },
-  { src: 'portfolio/exam/1-4.jpg', category: 'Вітальні', description: 'ва' },
   {
     src: 'portfolio/hodgepodge/01.jpg',
     category: 'Спальні',

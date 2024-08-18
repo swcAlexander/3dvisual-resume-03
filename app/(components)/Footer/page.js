@@ -34,7 +34,9 @@ const Footer = () => {
               </a>
             </li>
             <li className="social-links__item">
-              <a href="/" className="social-links__link">
+              <a
+                href="https://www.facebook.com/alexander.klymuk.9"
+                className="social-links__link">
                 <svg className="social-links__icon">
                   <use
                     href="images/icons.svg#icon-facebook"

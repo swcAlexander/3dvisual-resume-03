@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 const ModalSummary = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,11 +37,11 @@ const ModalSummary = () => {
             <span className={styles.form_text}>
               Дизайнер інтер'єрів - початківець, у минулому - учитель музики та
               етики, переможиця в конкурсі "Вчитель року".
-              <p>
+              <p className={styles.form_text}>
                 Після успішної кар'єри в освіті, перейшла на шлях дизайну
                 інтер'єрів, опанувавши 3ds Max та інші професійні програми.
                 Посидюча, маю шалену пристрасть до творчої роботи, не боюсь
-                викликів та труднощів, завжди прагну удосконалюватись.{' '}
+                викликів та труднощів, завжди прагну удосконалюватись.
               </p>
             </span>
           </form>

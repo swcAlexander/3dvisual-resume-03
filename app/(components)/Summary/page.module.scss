@@ -8,7 +8,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 450px;
+  min-width: 280px;
   padding: 40px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -17,12 +17,14 @@
   transform: translate(-50%, -50%) scale(1);
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),
     opacity 50ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media screen and (min-width: 1200px) {
-  .modal {
+  @media screen and (min-width: 480px) {
+    min-width: 400px;
+  }
+  @media screen and (min-width: 787px) {
     min-width: 528px;
   }
 }
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -45,6 +47,9 @@
 .form_text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .about__button {
