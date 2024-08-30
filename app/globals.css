@@ -3,7 +3,7 @@
   --title-text-color: #212121;
   --primary-white-color: #ffffff;
   --secondery-white-color: #f5f4fa;
-  --accent-color: #2196f3;
+  --accent-color: #3ac7f1;
   --accent-background-color: #2f303a;
   --border-color: #eeeeee;
   --secondery-border-color: #ececec;
@@ -948,6 +948,7 @@ body {
   font-size: 26px;
   line-height: 1.1923;
   letter-spacing: 0.03em;
+  color: var(--accent-color);
 }
 
 .footer__logo--color-white {

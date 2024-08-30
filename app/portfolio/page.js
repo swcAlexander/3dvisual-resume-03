@@ -1,7 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Header from '../(components)/Header/page';
-import Footer from '../(components)/Footer/page';
 import ModalImage from '../(components)/ModalImage/page';
 
 const images = [
@@ -145,8 +143,6 @@ export default function Portfolio() {
     setIsModalOpen(false);
   };
   return (
-    <>
-      <Header />
       <main>
         <section className="portfolio">
           <div className="container">
@@ -191,13 +187,11 @@ export default function Portfolio() {
             </ul>
           </div>
         </section>
-      </main>
-      <Footer />
-      <ModalImage
+        <ModalImage
         image={selectedImage}
         isModalOpen={isModalOpen}
-        closeModal={closeModal}
-      />
-    </>
+        closeModal={closeModal}/>
+      </main>
+
   );
 }

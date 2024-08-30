@@ -6,8 +6,6 @@ import Slider from './(components)/Slider/Slider';
 
 export default function Home() {
   return (
-    <>
-      <Header />
       <main className={styles.main}>
         <section className="hiro-section">
           <div className="container inline-block">
@@ -270,7 +268,5 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
-    </>
   );
 }
